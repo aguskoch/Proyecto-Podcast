@@ -1,0 +1,199 @@
+/*http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)*/
+   /* html, body, div, span, applet, object, iframe,
+   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+   a, abbr, acronym, address, big, cite, code,
+   del, dfn, em, img, ins, kbd, q, s, samp,
+   small, strike, strong, sub, sup, tt, var,
+   b, u, i, center,
+   dl, dt, dd, ol, ul, li,
+   fieldset, form, label, legend,
+   table, caption, tbody, tfoot, thead, tr, th, td,
+   article, aside, canvas, details, embed, 
+   figure, figcaption, footer, header, hgroup, 
+   menu, nav, output, ruby, section, summary,
+   time, mark, audio, video {
+       margin: 0.1em;
+       padding: 0;
+       border: 0;
+       vertical-align: baseline;
+       font-family: 'IBM Plex Mono', monospace;
+       text-align: center;
+       font-size: 100%; */
+    }
+
+   /*HTML5 display-role reset for older browsers*/
+   article, aside, details, figcaption, figure, 
+   footer, header, hgroup, menu, nav, section {
+       display: block;
+   }
+   body {
+       line-height: 1;
+   }
+   ol, ul {
+       list-style: none;
+   }
+   blockquote, q {
+       quotes: none;
+   }
+   blockquote:before, blockquote:after,
+   q:before, q:after {
+       content: '';
+       content: none;
+   }
+   table {
+       border-collapse: collapse;
+       border-spacing: 0;
+   }
+
+
+/* My own styling */
+/*Mobile view*/
+
+body{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "header"; 
+}
+
+.title{
+    padding-top: 5em;
+    font-family:  'IBM Plex Sans', sans-serif;
+}
+
+.title > h1{
+    font-size: 2.8em;
+    text-align: left;
+    font-weight: 300;
+    line-height: 1em;
+    padding: 0.2em;
+    color: #060A24;
+}
+
+.title > h1 .world{
+    text-decoration: line-through;
+}
+
+.title > h1 .dot{
+    color: #060A24;
+}
+
+.title > p{
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.6em;
+    padding-top: 0.8em;
+    color: #060A24;
+    margin: 1em;
+}
+
+.title > .button {
+    padding: 1em 1em;
+    margin: 2em;
+    background: #00F3BB;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+}
+
+.title > .button > a{
+    text-decoration: none;
+    color: #060A24;
+    
+}
+
+.title > .button:hover{
+    background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+
+}
+
+.title > .button:hover > a{
+    color: #FFFFFF;
+}
+
+.non-rec{
+    background: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+    clip-path: polygon(0 10vh, 100% 0%, 100% 95%, 0 100%);
+    width: 100%;
+}
+
+.episodes{
+    margin-top: 20vh;
+    margin-bottom: 30vh;
+    width: 100%;
+    
+}
+
+.h2-format{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    padding: 0.2em;
+    font-size: 2em;
+
+}
+
+.iframes{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "spotify"
+        "spotify spotify";
+    gap: 10vw 20vh;
+    margin: 4vw;
+    align-items: center;
+}
+
+.iframes > .spotify1 .spotify2 .spotify3 .spotify4 {
+    grid-area: spotify;
+}
+
+.cellphone > img{
+    width: 50px;
+    height: 50px;
+}
+
+@media screen and (min-width: 350px){
+
+    .title{
+        margin: 3vw 32vw 3vw 8vw;
+    }
+
+
+    .title > h1 .dot{
+        color: #0000EC;
+    }
+    
+    .title > p{
+        margin-left: 1em;
+    }
+
+    .title > .button {
+        height: 3em;
+        width: 14em;
+    }
+
+    .h2-format{
+        margin-left: 3em;
+    }
+
+    .iframes{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "spotify spotify"
+            "spotify spotify";
+        gap: 10vw 20vh;
+        margin: 4vw;
+        align-items: center;
+    }
+
+    .iframes > .spotify1 .spotify2 .spotify3 .spotify4 {
+        grid-area: spotify;
+    }
+
+}
+
