@@ -20,8 +20,8 @@
        vertical-align: baseline;
        font-family: 'IBM Plex Mono', monospace;
        text-align: center;
-       font-size: 100%; */
-    }
+       font-size: 100%; 
+    } */
 
    /*HTML5 display-role reset for older browsers*/
    article, aside, details, figcaption, figure, 
@@ -80,10 +80,10 @@ body{
     color: #060A24;
 }
 
-.title > p{
+.paragraph{
     font-family: 'IBM Plex Mono', monospace;
     line-height: 1.6em;
-    padding-top: 0.8em;
+    padding-top: 0.6em;
     color: #060A24;
     margin: 1em;
 }
@@ -116,6 +116,8 @@ body{
     background: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
     clip-path: polygon(0 10vh, 100% 0%, 100% 95%, 0 100%);
     width: 100%;
+    z-index: 1;
+    position: relative;
 }
 
 .episodes{
@@ -131,6 +133,7 @@ body{
     color: #FFFFFF;
     padding: 0.2em;
     font-size: 2em;
+    text-align: left;
 
 }
 
@@ -150,9 +153,26 @@ body{
     grid-area: spotify;
 }
 
+.cellphone{
+    height: 85vh;
+}
+
 .cellphone > img{
-    width: 50px;
-    height: 100px;
+    grid-area: cellphone;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    position: relative;
+    transform: translateY(-20vh);
+}
+
+#h2-where{
+    color: #060A24;
+}
+
+.where-we-come-from-text{
+    grid-area: where;
+    margin-top: 0;
 }
 
 @media screen and (min-width: 350px){
@@ -179,6 +199,10 @@ body{
         margin-left: 3em;
     }
 
+    #h2-where{
+        margin-left: 0;
+    }
+
     .iframes{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -193,6 +217,23 @@ body{
 
     .iframes > .spotify1 .spotify2 .spotify3 .spotify4 {
         grid-area: spotify;
+    }
+
+    .where-we-come-from{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "cellphone where";
+        margin: 10vw;
+    }
+    
+    .cellphone > img{
+        width: 32vw;
+        height: 100vh;
+        z-index: 2;
+        position: relative;
+        transform: translateY(-40vh);
+
     }
 
 }
