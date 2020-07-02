@@ -32,7 +32,7 @@ header nav .menu ul {
 }
 
 
-header nav .menu ul li a {
+header nav .menu ul .nav-li .nav-a {
     position: relative;
     text-decoration: none;
     color: #fff;
@@ -42,7 +42,7 @@ header nav .menu ul li a {
     display: block;
     font-size: 1em;
 }
-header nav .menu  ul li a:hover {
+header nav .menu  ul .nav-li .nav-a:hover {
     color: #fff;
 } 
 
@@ -116,30 +116,30 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
         flex-flow: row;
     }
 
-    header nav .menu  ul li {
+    header nav .menu  ul .nav-li {
         padding: 5px 10px;
         display: flex;
         flex-flow: row;
        
 
     } 
-    header nav .menu  ul li:hover {
+    header nav .menu  ul .nav-li:hover {
         background: unset;
         color: #00F3BB;
         text-decoration: line-through;
 
     } 
 
-    header nav .menu ul li a {
+    header nav .menu ul .nav-li .nav-a {
         padding: unset;
         line-height: unset;
         color: #000;
     }
-    header nav .menu  ul li a:hover {
+    header nav .menu  ul .nav-li .nav-a:hover {
         color: unset;
     } 
 
-    header nav .menu  ul li a:active{
+    header nav .menu  ul .nav-li .nav-a:active{
         color: #060A24; 
         text-decoration: line-through;
     }
