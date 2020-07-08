@@ -1,352 +1,501 @@
-/*http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)*/
-   /* html, body, div, span, applet, object, iframe,
-   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-   a, abbr, acronym, address, big, cite, code,
-   del, dfn, em, img, ins, kbd, q, s, samp,
-   small, strike, strong, sub, sup, tt, var,
-   b, u, i, center,
-   dl, dt, dd, ol, ul, li,
-   fieldset, form, label, legend,
-   table, caption, tbody, tfoot, thead, tr, th, td,
-   article, aside, canvas, details, embed, 
-   figure, figcaption, footer, header, hgroup, 
-   menu, nav, output, ruby, section, summary,
-   time, mark, audio, video {
-       margin: 0.1em;
-       padding: 0;
-       border: 0;
-       vertical-align: baseline;
-       font-family: 'IBM Plex Mono', monospace;
-       text-align: center;
-       font-size: 100%; 
-    } */
-
-   /*HTML5 display-role reset for older browsers*/
-   article, aside, details, figcaption, figure, 
-   footer, header, hgroup, menu, nav, section {
-       display: block;
-   }
-   body {
-       line-height: 1;
-   }
-   ol, ul {
-       list-style: none;
-   }
-
-   table {
-       border-collapse: collapse;
-       border-spacing: 0;
-   }
-
-
-/* My own styling */
-/*Mobile view*/
-
-body{
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-areas: 
-    "header"; 
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap");
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
-.title{
-    padding-top: 5em;
-    font-family:  'IBM Plex Sans', sans-serif;
+body {
+  line-height: 1;
 }
 
-.title > h1{
-    font-size: 2.8em;
-    text-align: left;
-    font-weight: 300;
-    line-height: 1em;
-    padding: 0.2em;
-    color: #060A24;
+ol, ul {
+  list-style: none;
 }
 
-.title > h1 .world{
-    text-decoration: line-through;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.title > h1 .dot{
-    color: #060A24;
+body {
+  display: -ms-grid;
+  display: grid;
 }
 
-.paragraph{
-    font-family: 'IBM Plex Mono', monospace;
-    line-height: 1.6em;
-    padding-top: 0.6em;
-    color: #060A24;
-    margin: 1em;
+header {
+  padding-top: 2vw;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: #fff;
+}
+
+header > img {
+  float: left;
+  padding: 4px 4px;
+}
+
+header > nav {
+  float: right;
+  padding: 4px 4px;
+}
+
+header nav .menu ul {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  list-style: none;
+  background: #0000EC;
+  height: 0px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+header nav .menu ul .nav-li .nav-a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  text-align: left;
+  padding: 16px 5%;
+  line-height: 28px;
+  display: block;
+  font-size: 1em;
+}
+
+header nav .menu ul .nav-li .nav-a:hover {
+  color: #fff;
+}
+
+header nav .menu input[type="checkbox"]:checked ~ ul {
+  height: 240px;
+}
+
+header nav .menu {
+  padding-top: 3px;
+}
+
+header nav .menu input {
+  display: block;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+}
+
+/*span -lineas del menu hamburguesa-*/
+header nav .menu span {
+  display: block;
+  width: 25px;
+  height: 2.5px;
+  margin-bottom: 6.5px;
+  position: relative;
+  background: #000;
+  z-index: 1;
+  -webkit-transform-origin: 3px 0px;
+          transform-origin: 3px 0px;
+}
+
+header nav .menu span:first-child {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+header nav .menu span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+/*movimiento a cruz*/
+header nav .menu input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(2px, 1px);
+          transform: rotate(45deg) translate(2px, 1px);
+}
+
+header nav .menu input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+header nav .menu input:checked ~ span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(1px, 0px);
+          transform: rotate(-45deg) translate(1px, 0px);
+}
+
+.title {
+  padding-top: 5em;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.title > h1 {
+  font-size: 2.8em;
+  text-align: left;
+  font-weight: 300;
+  line-height: 1em;
+  padding: 0.2em;
+  color: #060A24;
+}
+
+.title > h1 .world {
+  text-decoration: line-through;
+}
+
+.title > h1 .dot {
+  color: #060A24;
+}
+
+.paragraph {
+  font-family: 'IBM Plex Mono', monospace;
+  line-height: 1.6em;
+  padding-top: 0.6em;
+  color: #060A24;
+  margin: 1em;
 }
 
 .button {
-    padding: 1em 1em;
-    margin: 2em;
-    background: #00F3BB;
-    text-align: center;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 500;
+  padding: 1em 1em;
+  margin: 2em;
+  background: #00F3BB;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
 }
 
-a{
-    text-decoration: none;
-    color: #060A24;
-    
+a {
+  text-decoration: none;
+  color: #060A24;
 }
 
-.button:hover{
-    background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
-
+.button:hover {
+  background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
 }
 
-.button:hover > a{
-    color: #FFFFFF;
+.button:hover > a {
+  color: #FFFFFF;
 }
 
-.non-rec{
-    background: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
-    clip-path: polygon(0 10vh, 100% 0%, 100% 95%, 0 100%);
-    width: 100%;
-    z-index: 1;
-    position: relative;
+.non-rec {
+  background: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+  -webkit-clip-path: polygon(0 10vh, 100% 0%, 100% 95%, 0 100%);
+          clip-path: polygon(0 10vh, 100% 0%, 100% 95%, 0 100%);
+  width: 100%;
+  z-index: 1;
+  position: relative;
 }
 
 .episodes, .news {
-    margin-top: 20vh;
-    margin-bottom: 30vh;
-    width: 100%;
-    
+  margin-top: 20vh;
+  margin-bottom: 30vh;
+  width: 100%;
 }
 
-.h2-format{
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 300;
+.h2-format {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 300;
+  color: #060A24;
+  padding: 0.2em;
+  font-size: 2.5em;
+  text-align: left;
+}
+
+#episodes-h2 {
+  color: #FFFFFF;
+}
+
+.iframes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.iframes > .spotify1, .spotify2, .spotify3, .spotify4 {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 90%;
+  height: 232px;
+  background-color: transparent;
+  margin-bottom: 1vh;
+}
+
+.cellphone {
+  height: 70vh;
+}
+
+.cellphone > img {
+  grid-area: cellphone;
+  width: 100vw;
+  height: 80vh;
+  z-index: 2;
+  position: relative;
+  -webkit-transform: translateY(-20vh);
+          transform: translateY(-20vh);
+}
+
+.where-we-come-from-text {
+  grid-area: where;
+  margin-top: 0;
+  margin-bottom: 10vh;
+}
+
+.invite {
+  margin-bottom: 5vh;
+}
+
+.image-invite-div {
+  line-height: 0;
+}
+
+.image-invite {
+  width: 100%;
+}
+
+.icon-topics-div {
+  text-align: center;
+  padding: 5vh;
+}
+
+.h3-format {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  color: #060A24;
+  text-align: center;
+  font-size: 1em;
+}
+
+#non-rec-news {
+  -webkit-clip-path: polygon(0 23%, 100% 10%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 23%, 100% 10%, 100% 100%, 0% 100%);
+  height: 75vh;
+}
+
+.news {
+  z-index: 2;
+}
+
+#news-h2 {
+  color: #FFFFFF;
+  text-align: center;
+  padding: 4vh;
+}
+
+.footer {
+  padding: 6vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #060A24;
+}
+
+.h4-format {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  padding-bottom: 4vh;
+  color: #060A24;
+  font-size: 1em;
+}
+
+.footer > .contacts > a {
+  padding: 2vw;
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    padding: 1vh;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  header nav .menu ul {
+    top: 0;
+    right: 0;
+    position: relative;
+    overflow: hidden;
+    background: unset;
+    height: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+  }
+  header nav .menu ul .nav-li {
+    padding: 5px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+  }
+  header nav .menu ul .nav-li:hover {
+    background: unset;
+    color: #00F3BB;
+    text-decoration: line-through;
+  }
+  header nav .menu ul .nav-li .nav-a {
+    padding: unset;
+    line-height: unset;
+    color: #000;
+  }
+  header nav .menu ul .nav-li .nav-a:hover {
+    color: unset;
+  }
+  header nav .menu ul .nav-li .nav-a:active {
     color: #060A24;
-    padding: 0.2em;
-    font-size: 2.5em;
-    text-align: left;
-}
-
-#episodes-h2{
-    color: #FFFFFF;
-}
-
-.iframes{
-    margin: 4vw;    
-    align-items: center;
-}
-
-
-.iframes > .spotify1, .spotify2, .spotify3, .spotify4{
-    width: 100%;
-    height: 232px;
-}
-
-.cellphone{
-    height: 85vh;
-}
-
-.cellphone > img{
-    grid-area: cellphone;
-    width: 100vw;
+    text-decoration: line-through;
+  }
+  header nav .menu input {
+    display: none;
+  }
+  header nav .menu span {
+    display: none;
+  }
+  .title {
+    margin: 3vw 32vw 3vw 8vw;
+  }
+  .title > h1 .dot {
+    color: #0000EC;
+  }
+  .button {
+    height: 3em;
+    width: 14em;
+  }
+  .h2-format {
+    margin-left: 3em;
+  }
+  #h2-where {
+    margin-left: 0;
+  }
+  .iframes {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "spotify spotify" "spotify spotify";
+    gap: 10vw 20vh;
+    margin: 4vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .iframes > .spotify1 .spotify2 .spotify3 .spotify4 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: spotify;
+  }
+  .where-we-come-from {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "cellphone where";
+    margin: 20vh 20vh 0 20vh;
+  }
+  .cellphone > img {
+    width: 32vw;
     height: 100vh;
     z-index: 2;
     position: relative;
-    transform: translateY(-20vh);
-}
-
-.where-we-come-from-text{
-    grid-area: where;
-    margin-top: 0;
-    margin-bottom: 10vh;
-}
-
-.invite{
-    margin-bottom: 5vh;
-}
-
-.image-invite-div{
-    line-height: 0;
-}
-
-.image-invite{
-    width: 100%;
-}
-
-.icon-topics-div{
-    text-align: center;
-    padding: 5vh;
-}
-
-.h3-format{
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 600;
-    color: #060A24;
-    text-align: center;
-    font-size: 1em;
-}
-
-#non-rec-news{
-    clip-path: polygon(0 23%, 100% 10%, 100% 100%, 0% 100%);
-    height: 75vh;
-}
-
-.news{
-    z-index: 2;
-}
-
-#news-h2{
-    color: #FFFFFF;
-    text-align: center;
-    padding: 4vh;
-
-}
-
-.footer{
-    padding: 6vh;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    color:  #060A24;
-}
-
-.h4-format{
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 300;
-    padding-bottom: 4vh;
-    color: #060A24;
-}
-
-.footer > .contacts > a{
-    padding: 2vw;
-}
-
-@media screen and (min-width: 350px){
-
-    .title{
-        margin: 3vw 32vw 3vw 8vw;
-    }
-
-
-    .title > h1 .dot{
-        color: #0000EC;
-    }
-    
-    .title > p{
-        margin-left: 1em;
-    }
-
-    .button {
-        height: 3em;
-        width: 14em;
-    }
-
-    .h2-format{
-        margin-left: 3em;
-    }
-
-    #h2-where{
-        margin-left: 0;
-    }
-
-    .iframes{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas:
-            "spotify spotify"
-            "spotify spotify";
-        gap: 10vw 20vh;
-        margin: 4vw;
-        align-items: center;
-    }
-
-    .iframes > .spotify1 .spotify2 .spotify3 .spotify4 {
-        grid-area: spotify;
-    
-        
-    }
-
-    .where-we-come-from{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-        "cellphone where";
-        margin: 20vh 20vh 0 20vh;
-    }
-    
-    .cellphone > img{
-        width: 32vw;
-        height: 100vh;
-        z-index: 2;
-        position: relative;
-        transform: translateY(-40vh);
-
-    }
-
-    .invite{
-        display: grid;
+    -webkit-transform: translateY(-40vh);
+            transform: translateY(-40vh);
+  }
+  .invite {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 10vh 1fr 1fr;
         grid-template-rows: 10vh 1fr 1fr;
-        grid-template-areas: 
-        "h2text h2text h2text"
-        "imageinvite imageinvite imageinvite"
-        "imageinvite imageinvite imageinvite";
-    }
-
-    #invte-h2{
-        grid-area: h2text;
-    }
-
-    .image-invite-div{
-        line-height: 0;
-    }
-
-    .image-invite{
-        grid-area: imageinvite;
-        width: 100%;
-    }
-
-    .topics{
-        display: grid;
+        grid-template-areas: "h2text h2text h2text" "imageinvite imageinvite imageinvite" "imageinvite imageinvite imageinvite";
+  }
+  #invte-h2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: h2text;
+  }
+  .image-invite-div {
+    line-height: 0;
+  }
+  .image-invite {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: imageinvite;
+    width: 100%;
+  }
+  .topics {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 14vh 1fr;
         grid-template-rows: 14vh 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-areas: 
-        "h2topics h2topics h2topics h2topics "
-        "icontopics icontopics icontopics icontopics";
-    }
-
-    #topics-h2{
-        grid-area: h2topics;
-    }
-
-    .icon-topics-div{
-        text-align: center;
-    }
-
-    .icon-topics-div > img{
-        grid-area: icontopics;
-    }
-
-    #non-rec-news{
-        height: 60vh;
-    }
-
-    #news-h2{
-        margin-left: 0;
-
-    }
-    #button-news{
-        margin: auto;
-        width: 20em;
-    }
-
-    .footer{
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;   
-    }
+        grid-template-areas: "h2topics h2topics h2topics h2topics " "icontopics icontopics icontopics icontopics";
+  }
+  #topics-h2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: h2topics;
+  }
+  .icon-topics-div {
+    text-align: center;
+  }
+  .icon-topics-div > img {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: icontopics;
+  }
+  #non-rec-news {
+    height: 60vh;
+  }
+  #news-h2 {
+    margin-left: 0;
+  }
+  #button-news {
+    margin: auto;
+    width: 20em;
+  }
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .h4-format, .contacts {
+    font-size: 1em;
+  }
 }
-
+/*# sourceMappingURL=style.css.map */

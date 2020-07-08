@@ -1,28 +1,5 @@
-/*http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)*/
-/* html, body, div, span, applet, object, iframe,
-   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-   a, abbr, acronym, address, big, cite, code,
-   del, dfn, em, img, ins, kbd, q, s, samp,
-   small, strike, strong, sub, sup, tt, var,
-   b, u, i, center,
-   dl, dt, dd, ol, ul, li,
-   fieldset, form, label, legend,
-   table, caption, tbody, tfoot, thead, tr, th, td,
-   article, aside, canvas, details, embed, 
-   figure, figcaption, footer, header, hgroup, 
-   menu, nav, output, ruby, section, summary,
-   time, mark, audio, video {
-       margin: 0.1em;
-       padding: 0;
-       border: 0;
-       vertical-align: baseline;
-       font-family: 'IBM Plex Mono', monospace;
-       text-align: center;
-       font-size: 100%; 
-    } */
-/*HTML5 display-role reset for older browsers*/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap");
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -36,13 +13,6 @@ ol, ul {
   list-style: none;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* My own styling */
-/*Mobile view*/
 * {
   margin: 0;
   padding: 0;
@@ -54,27 +24,29 @@ table {
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "header";
 }
 
 header {
-  top: 0;
-  padding: 2vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding-top: 2vw;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: #fff;
+}
+
+header > img {
+  float: left;
+  padding: 4px 4px;
+}
+
+header > nav {
+  float: right;
+  padding: 4px 4px;
 }
 
 header nav .menu ul {
-  /*posicion absolute para que se posicione debajo del resto del header - top medida del header*/
   width: 100%;
   position: absolute;
-  top: 45px;
   right: 0;
   overflow: hidden;
   list-style: none;
@@ -106,11 +78,8 @@ header nav .menu {
   padding-top: 3px;
 }
 
-/*checkbox transparente y en primer plano*/
 header nav .menu input {
   display: block;
-  width: 40px;
-  height: 32px;
   opacity: 0;
   z-index: 2;
   position: absolute;
@@ -238,25 +207,35 @@ a {
 }
 
 .iframes {
-  margin: 4vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .iframes > .spotify1, .spotify2, .spotify3, .spotify4 {
-  width: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 90%;
   height: 232px;
+  background-color: transparent;
+  margin-bottom: 1vh;
 }
 
 .cellphone {
-  height: 85vh;
+  height: 70vh;
 }
 
 .cellphone > img {
   grid-area: cellphone;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   z-index: 2;
   position: relative;
   -webkit-transform: translateY(-20vh);
@@ -330,27 +309,18 @@ a {
   font-weight: 300;
   padding-bottom: 4vh;
   color: #060A24;
+  font-size: 1em;
 }
 
 .footer > .contacts > a {
   padding: 2vw;
 }
 
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 500px) {
   header {
-    width: 100%;
-    position: absolute;
-    height: 45px;
-    top: 0;
-    padding: 10px 5%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    padding: 1vh;
+    background-color: rgba(255, 255, 255, 0.8);
   }
-
   header nav .menu ul {
     top: 0;
     right: 0;
@@ -366,7 +336,6 @@ a {
         -ms-flex-flow: row;
             flex-flow: row;
   }
-
   header nav .menu ul .nav-li {
     padding: 5px 10px;
     display: -webkit-box;
@@ -377,61 +346,45 @@ a {
         -ms-flex-flow: row;
             flex-flow: row;
   }
-
   header nav .menu ul .nav-li:hover {
     background: unset;
     color: #00F3BB;
     text-decoration: line-through;
   }
-
   header nav .menu ul .nav-li .nav-a {
     padding: unset;
     line-height: unset;
     color: #000;
   }
-
   header nav .menu ul .nav-li .nav-a:hover {
     color: unset;
   }
-
   header nav .menu ul .nav-li .nav-a:active {
     color: #060A24;
     text-decoration: line-through;
   }
-
   header nav .menu input {
     display: none;
   }
-
   header nav .menu span {
     display: none;
   }
-
   .title {
     margin: 3vw 32vw 3vw 8vw;
   }
-
   .title > h1 .dot {
     color: #0000EC;
   }
-
-  .title > p {
-    margin-left: 1em;
-  }
-
   .button {
     height: 3em;
     width: 14em;
   }
-
   .h2-format {
     margin-left: 3em;
   }
-
   #h2-where {
     margin-left: 0;
   }
-
   .iframes {
     display: -ms-grid;
     display: grid;
@@ -440,14 +393,13 @@ a {
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-template-areas: "spotify spotify"
-    "spotify spotify";
+ "spotify spotify";
     gap: 10vw 20vh;
     margin: 4vw;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-
   .iframes > .spotify1 .spotify2 .spotify3 .spotify4 {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
@@ -455,7 +407,6 @@ a {
     -ms-grid-column-span: 2;
     grid-area: spotify;
   }
-
   .where-we-come-from {
     display: -ms-grid;
     display: grid;
@@ -464,7 +415,6 @@ a {
         grid-template-areas: "cellphone where";
     margin: 20vh 20vh 0 20vh;
   }
-
   .cellphone > img {
     width: 32vw;
     height: 100vh;
@@ -473,7 +423,6 @@ a {
     -webkit-transform: translateY(-40vh);
             transform: translateY(-40vh);
   }
-
   .invite {
     display: -ms-grid;
     display: grid;
@@ -485,18 +434,15 @@ a {
  "imageinvite imageinvite imageinvite"
  "imageinvite imageinvite imageinvite";
   }
-
   #invte-h2 {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-area: h2text;
   }
-  
   .image-invite-div {
     line-height: 0;
   }
-
   .image-invite {
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
@@ -505,7 +451,6 @@ a {
     grid-area: imageinvite;
     width: 100%;
   }
-
   .topics {
     display: -ms-grid;
     display: grid;
@@ -516,38 +461,31 @@ a {
         grid-template-areas: "h2topics h2topics h2topics h2topics "
  "icontopics icontopics icontopics icontopics";
   }
-
   #topics-h2 {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
     grid-area: h2topics;
   }
-
   .icon-topics-div {
     text-align: center;
   }
-
   .icon-topics-div > img {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
     grid-area: icontopics;
   }
-
   #non-rec-news {
     height: 60vh;
   }
-
   #news-h2 {
     margin-left: 0;
   }
-
   #button-news {
     margin: auto;
     width: 20em;
   }
-
   .footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -559,6 +497,9 @@ a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  .h4-format, .contacts {
+    font-size: 1em;
   }
 }
 /*# sourceMappingURL=style2.css.map */
