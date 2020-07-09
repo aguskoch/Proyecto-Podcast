@@ -1,18 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap");
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -21,13 +8,22 @@ ol, ul {
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 20vh;
+}
+
 body {
+  line-height: 1;
   display: -ms-grid;
   display: grid;
 }
 
+ol, ul {
+  list-style: none;
+}
+
 header {
-  padding-top: 2vw;
+  padding-top: 2vh;
   position: fixed;
   z-index: 10;
   width: 100%;
@@ -36,12 +32,12 @@ header {
 
 header > img {
   float: left;
-  padding: 4px 4px;
+  padding-left: 5vw;
 }
 
 header > nav {
   float: right;
-  padding: 4px 4px;
+  padding-right: 5vw;
 }
 
 header nav .menu ul {
@@ -60,7 +56,7 @@ header nav .menu ul .nav-li .nav-a {
   text-decoration: none;
   color: #fff;
   text-align: left;
-  padding: 16px 5%;
+  padding: 3vh 5%;
   line-height: 28px;
   display: block;
   font-size: 1em;
@@ -71,7 +67,7 @@ header nav .menu ul .nav-li .nav-a:hover {
 }
 
 header nav .menu input[type="checkbox"]:checked ~ ul {
-  height: 240px;
+  height: 40vh;
 }
 
 header nav .menu {
@@ -85,7 +81,6 @@ header nav .menu input {
   position: absolute;
 }
 
-/*span -lineas del menu hamburguesa-*/
 header nav .menu span {
   display: block;
   width: 25px;
@@ -94,8 +89,8 @@ header nav .menu span {
   position: relative;
   background: #000;
   z-index: 1;
-  -webkit-transform-origin: 3px 0px;
-          transform-origin: 3px 0px;
+  -webkit-transform-origin: 3px 0;
+          transform-origin: 3px 0;
 }
 
 header nav .menu span:first-child {
@@ -108,7 +103,6 @@ header nav .menu span:nth-last-child(2) {
           transform-origin: 0% 100%;
 }
 
-/*movimiento a cruz*/
 header nav .menu input:checked ~ span {
   opacity: 1;
   -webkit-transform: rotate(45deg) translate(2px, 1px);
@@ -185,11 +179,14 @@ a {
   width: 100%;
   z-index: 1;
   position: relative;
+  height: auto;
+  padding-top: 1vh;
+  padding-bottom: 30vh;
 }
 
 .episodes, .news {
   margin-top: 20vh;
-  margin-bottom: 30vh;
+  margin-bottom: 10vh;
   width: 100%;
 }
 
@@ -217,12 +214,13 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 4vh;
 }
 
 .iframes > .spotify1, .spotify2, .spotify3, .spotify4 {
   -ms-flex-line-pack: center;
       align-content: center;
-  width: 90%;
+  width: 100%;
   height: 232px;
   background-color: transparent;
   margin-bottom: 1vh;
@@ -249,7 +247,7 @@ a {
 }
 
 .invite {
-  margin-bottom: 5vh;
+  margin: 10vh 0 10vh 0;
 }
 
 .image-invite-div {
@@ -316,9 +314,9 @@ a {
   padding: 2vw;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 800px) {
   header {
-    padding: 1vh;
+    padding: 2.5vh;
     background-color: rgba(255, 255, 255, 0.8);
   }
   header nav .menu ul {
@@ -405,6 +403,7 @@ a {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: spotify;
+    width: auto;
   }
   .where-we-come-from {
     display: -ms-grid;
@@ -412,7 +411,7 @@ a {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "cellphone where";
-    margin: 20vh 20vh 0 20vh;
+    margin: 20vh 10vh 0 10vh;
   }
   .cellphone > img {
     width: 32vw;
@@ -431,7 +430,7 @@ a {
         grid-template-rows: 10vh 1fr 1fr;
         grid-template-areas: "h2text h2text h2text" "imageinvite imageinvite imageinvite" "imageinvite imageinvite imageinvite";
   }
-  #invte-h2 {
+  #invite-h2 {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
