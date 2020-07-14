@@ -305,13 +305,23 @@ a {
 .h4-format {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 300;
-  padding-bottom: 4vh;
+  padding: 1vw;
   color: #060A24;
-  font-size: 1em;
+  font-size: 14px;
+}
+
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
 }
 
 .footer > .contacts > a {
-  padding: 2vw;
+  padding: 1vw;
 }
 
 @media screen and (min-width: 800px) {
@@ -494,7 +504,7 @@ a {
             justify-content: space-between;
   }
   .h4-format, .contacts {
-    font-size: 1em;
+    font-size: 14px;
   }
 }
 

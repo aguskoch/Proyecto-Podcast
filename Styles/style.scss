@@ -287,13 +287,18 @@ a{
 .h4-format{
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 300;
-    padding-bottom: 5%;
+    padding: 1vw;
     color: #060A24;
     font-size: 14px;
 }
 
+.contacts{
+    display: flex;
+    flex-flow: row;
+}
+
 .footer > .contacts > a{
-    padding: 5%;
+    padding: 1vw;
 }
 
 
@@ -472,7 +477,7 @@ a{
     }
 
     .h4-format, .contacts{
-        font-size: 1em;
+        font-size: 14px;
     }
 }
 
